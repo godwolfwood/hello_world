@@ -4,11 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Hello World</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static "HelloWorld/css/style.css" %}">
         <script src="{% static "HelloWorld/javascript/main.js" %}"></script>
     </head>
     <body>
-        HelloWorld
+        <button class="btn btn-primary" id="numbeo">Get Info from Numbeo</button>
+        <div style="margin-top:50px; border:1px solid silver; padding:10px; width:700px;" id="placeholder1">Info from Numbeo</div>
+
+        <button class="btn btn-primary" id="numbeo">Get Info from Glassdoor</button>
+        <div style="margin-top:50px; border:1px solid silver; padding:10px; width:700px;" id="placeholder2">Info from Numbeo</div>
     </body>
 </html>
