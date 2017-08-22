@@ -2,3 +2,37 @@
     margin: 0;
     padding: 0;
 }
+#wrapper{
+    width: 1070px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    background-color: pink; 
+}
+h1 {
+	margin-bottom: 10px;
+}
+.main_content{
+	display: inline-block;
+	width: 59%;
+}
+.menubar{
+	background-color: green;
+	text-align: center
+}
+.menubar li{
+	display: inline-block;
+	margin: 0px 52px;
+}
+ol {
+	list-style: none;
+}
+.state_info{
+	border: 1px solid black;
+}
+.jobs{
+	background-color: orange;
+    display: inline-block;
+    width: 40%;
+    height: 697px;
+    vertical-align: top;
+}
