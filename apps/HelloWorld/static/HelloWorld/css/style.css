@@ -76,4 +76,12 @@ ol {
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+    overflow-y: scroll;
+}
+h5,
+.job_location {
+	display: inline-block;
+}
+.job_date {
+	margin-top: -17px;
 }
