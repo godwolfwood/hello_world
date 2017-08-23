@@ -35,4 +35,12 @@ ol {
     width: 40%;
     height: 697px;
     vertical-align: top;
+    overflow-y: scroll;
+}
+h5,
+.job_location {
+	display: inline-block;
+}
+.job_date {
+	margin-top: -17px;
 }
