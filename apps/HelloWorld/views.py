@@ -7,3 +7,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 def index( request ):
     return render(request, "HelloWorld/index.html")
+
+def login(request):
+	print 'hello'
+	return render(request, "HelloWorld/login.html")
