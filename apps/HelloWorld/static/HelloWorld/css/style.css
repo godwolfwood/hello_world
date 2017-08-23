@@ -72,6 +72,14 @@ ol {
     width: 37.5%;
     height: 713px;
     vertical-align: top;
+    overflow-y: scroll;
+}
+h5,
+.job_location {
+	display: inline-block;
+}
+.job_date {
+	margin-top: -17px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
