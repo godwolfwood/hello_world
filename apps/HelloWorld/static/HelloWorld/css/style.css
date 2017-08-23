@@ -1,7 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
-}
+    padding: 0;}
 
 /*Body styles*/
 
@@ -80,4 +79,8 @@ h5,
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+}
+.email_login input{
+    display: block;
+    margin-top: 6px;
 }
