@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django', # Oauth
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware', # Oauth
 ]
 
 ROOT_URLCONF = 'hello_world.urls'
@@ -63,10 +65,21 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', # Oauth
+                'social_django.context_processors.login_redirect', # Oauth
             ],
         },
     },
 ]
+# Oauth
+AUTHENTICATION_BACKENDS = (
+    # 'social_core.backends.google.GoogleOpenId',
+    # 'social_core.backends.google.GoogleOAuth2',
+    # 'social_core.backends.google.GoogleOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'hello_world.wsgi.application'
 
@@ -119,3 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1351917811592087'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'd6692066a8a42b30314e74639757ba8f'  # App Secret
