@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 console.log("hello world!");
 

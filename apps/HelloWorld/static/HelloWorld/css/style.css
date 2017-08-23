@@ -1,39 +1,72 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-#wrapper{
-    width: 1070px;
+
+/*Body styles*/
+
+#wrapper {
+    width: 1200px;
     margin: 0px auto;
     box-sizing: border-box;
-    background-color: pink; 
+    margin-bottom: 20px;
 }
-h1 {
-	margin-bottom: 10px;
+h1.banner-heading {
+    margin: 20px 0 20px 13px;
 }
-.main_content{
-	display: inline-block;
-	width: 59%;
+
+/*Navbar styles*/
+
+nav {
+    width: 100%;
 }
-.menubar{
-	background-color: green;
-	text-align: center
+.menubar {
+    background-color: #333333;
+    text-align: center
 }
-.menubar li{
-	display: inline-block;
-	margin: 0px 52px;
+.menubar li {
+    display: inline-block;
+    margin: 0px 74px;
+}
+.menubar li a,
+div.state_container li a {
+    color: white;
+}
+
+/*Main content styles*/
+
+.main-content {
+    display: inline-block;
+    margin-right: 10px;
+    width: 55%;
+}
+div.state_container {
+    padding: 10px;
+    background-color: #999999;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    margin-bottom: 20px;
 }
 ol {
-	list-style: none;
+    list-style: none;
 }
-.state_info{
-	border: 1px solid black;
+.state-info {
+    padding: 10px;
+    border: 1px solid black;
+    height: 250px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
 }
-.jobs{
-	background-color: orange;
+.jobs {
+    padding: 10px;
+    color: white;
+    background-color: #006699;
     display: inline-block;
     width: 40%;
-    height: 697px;
+    height: 713px;
     vertical-align: top;
     overflow-y: scroll;
 }
@@ -43,4 +76,8 @@ h5,
 }
 .job_date {
 	margin-top: -17px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
 }
