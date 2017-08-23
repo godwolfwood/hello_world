@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello World</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'HelloWorld/css/style.css' %}">
+    <script src="{% static 'HelloWorld/javascript/main.js' %}"></script>
+</head>
+
+<body id="wrapper">
+    <h1 class="banner-heading">HelloWorld</h1>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <ul class="navbar navbar-default menubar">
+            <li class="navbar-text"><a href="#">Home</a></li>
+            <li><a href="#">Employers</a></li>
+            <li><a href="#">Look For Work</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Registration</a></li>
+        </ul>
+    </nav>
+    <h2>Login</h2>
+    <form>
+        <input type="submit" value="Sign-in  with Google">
+    </form>
+    <b> Or </b>
+    <form class="email_login">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Password">
+        <input type="submit" value="Sign-in  with Email">
+    <form>
+</body>
+
+</html>
