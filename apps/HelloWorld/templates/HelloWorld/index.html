@@ -13,14 +13,17 @@
 
 <body id="wrapper">
     <h1 class="banner-heading">HelloWorld</h1>
-
+    {% if request.session.id %}
+        <h3> Hi {{request.session.id}} !</h3>
+        <a href='/logout'><b>Logout</b></a>
+    {% endif %}
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="navbar navbar-default menubar">
             <li class="navbar-text"><a href="/">Home</a></li>
             <li><a href="/">Employers</a></li>
             <li><a href="#">Look For Work</a></li>
             <li><a href="/login">Login</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="/registration">Registration</a></li>
         </ul>
     </nav>
 
@@ -93,11 +96,11 @@
         <div class="state-info">
             <h2> General Stat/s:</h2>
         </div>
-    </div>
+        </div>
 
-    <div class="jobs" id="sidebar">
-        <h3>Jobs</h3>
-    </div>
-</body>
+        <div class="jobs" id="sidebar">
+            <h3>Jobs</h3>
+        </div>
+    </body>
 
 </html>

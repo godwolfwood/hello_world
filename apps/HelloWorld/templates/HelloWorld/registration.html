@@ -13,27 +13,37 @@
 
 <body id="wrapper">
     <h1 class="banner-heading">HelloWorld</h1>
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="navbar navbar-default menubar">
             <li class="navbar-text"><a href="/">Home</a></li>
-            <li><a href="#">Employers</a></li>
+            <li><a href="/">Employers</a></li>
             <li><a href="#">Look For Work</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/registration">Registration</a></li>
         </ul>
     </nav>
-    <h2>Login</h2>
-    <form>
-        <input type="submit" value="Sign-in  with Google">
-    </form>
-    <b> Or </b>
-    <form class="email_login">
-        {% csrf_token %}
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Password">
-        <input type="submit" value="Sign-in  with Email">
-    <form>
+  	<h2>Registration</h2>
+  	<form class="reg_form" action="/add" method="POST">
+  	 	{% csrf_token %}
+  		<p>First Name</p>
+  		<input type='text' name="first_name_form">
+  		<p>Last Name</p>
+  		<input type='text' name="last_name_form">
+  		<p>E-mail</p>
+  		<input type='text' name="email_form">
+  		<p>Password</p>
+  		<input type='text' name="pass_form">
+  		<p>Confirm Password</p>
+  		<input type='text' name="conf_form">
+  		<input type="submit" value="Submit">
+  	</form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 </body>
 
 </html>
