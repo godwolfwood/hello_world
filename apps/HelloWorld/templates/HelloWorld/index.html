@@ -4,26 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Hello World</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         {% load static %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'HelloWorld/css/style.css' %}">
         <script src="{% static 'HelloWorld/javascript/main.js' %}"></script>
     </head>
+
     <body id="wrapper">
-        <h1>HelloWorld</h1>
-        <ul class = "menubar">
-            <li>Home</li>
-            <li>Employers</li>
-            <li>Look For Work</li>
-            <li>Login</li>
-            <li>Registration</li>
- 
-        </ul>
-        <div class = "main_content">
-            <div class = "state_container">
+        <h1 class="banner-heading">HelloWorld</h1>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <ul class="navbar navbar-default menubar">
+                <li class="navbar-text"><a href="#">Home</a></li>
+                <li><a href="#">Employers</a></li>
+                <li><a href="#">Look For Work</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Registration</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+
+            <div class="state_container">
                 <ol>
-                    <div class = "row">
-                        <div class= "col">
+                    <div class="row">
+                        <div class="col">
                             <li><a href="">Alabama </a></li>
                             <li><a href="">Alaska </a></li>
                             <li><a href="">Arizona </a></li>
@@ -43,7 +49,7 @@
                             <li><a href="">Kentucky </a></li>
                         </div>
                         <!-- stops here -->
-                        <div class= "col">
+                        <div class="col">
                             <li><a href="">Louisiana </a></li>
                             <li><a href="">Maine </a></li>
                             <li><a href="">Maryland </a></li>
@@ -63,7 +69,7 @@
                             <li><a href="">North Dakota </a></li>
 
                         </div>
-                        <div class= "col">
+                        <div class="col">
                             <li><a href="">Ohio </a></li>
                             <li><a href="">Oklahoma </a></li>
                             <li><a href="">Oregon </a></li>
@@ -84,16 +90,13 @@
                     </div>
                 </ol>
             </div>
-            <div class = "state_info">
-                <h2> 
-                General Stat/s:
-                </h2>
-            </div>  
+            <div class="state-info">
+                <h2> General Stat/s:</h2>
+            </div>
         </div>
-        <div class = "jobs">
-            <h3>
-            Jobs
-            </h3>
+
+        <div class="jobs">
+            <h3>Jobs</h3>
         </div>
     </body>
 </html>
