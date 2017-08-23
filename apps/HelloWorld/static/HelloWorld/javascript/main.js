@@ -1,3 +1,5 @@
+console.log("hello world!");
+
 $(document).ready(function(){
     var count = 1;
     $.get("http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"", function(res) {
