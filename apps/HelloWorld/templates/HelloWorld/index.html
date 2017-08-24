@@ -11,92 +11,92 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{% static 'HelloWorld/javascript/main.js' %}"></script>
     </head>
-
     <body id="wrapper">
         <h1 class="banner-heading">HelloWorld</h1>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <ul class="navbar navbar-default menubar">
-            <li class="navbar-text"><a href="/">Home</a></li>
-            <li><a href="/">Employers</a></li>
-            <li><a href="#">Look For Work</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="#">Registration</a></li>
-        </ul>
-    </nav>
+        {% if request.session.id %}
+            <h3> Hi {{request.session.id}} !</h3>
+            <a href='/logout'><b>Logout</b></a>
+        {% endif %}
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <ul class="navbar navbar-default menubar">
+                <li class="navbar-text"><a href="/">Home</a></li>
+                <li><a href="/">Employers</a></li>
+                <li><a href="#">Look For Work</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/registration">Registration</a></li>
+            </ul>
+        </nav>
+            <div class="main-content">
+                <div class="state_container">
+                    <ol>
+                        <div class="row">
+                            <div class="col">
+                                <li><a href="">Alabama </a></li>
+                                <li><a href="">Alaska </a></li>
+                                <li><a href="">Arizona </a></li>
+                                <li><a href="">Arkansas </a></li>
+                                <li><a href="">California </a></li>
+                                <li><a href="">Colorado </a></li>
+                                <li><a href="">Connecticut </a></li>
+                                <li><a href="">Delaware </a></li>
+                                <li><a href="">Florida </a></li>
+                                <li><a href="">Georgia </a></li>
+                                <li><a href="">Hawaii </a></li>
+                                <li><a href="">Idaho </a></li>
+                                <li><a href="">Illinois</a></li>
+                                <li><a href="">Indiana </a></li>
+                                <li><a href="">Iowa </a></li>
+                                <li><a href="">Kansas </a></li>
+                                <li><a href="">Kentucky </a></li>
+                            </div>
+                            <!-- stops here -->
+                            <div class="col">
+                                <li><a href="">Louisiana </a></li>
+                                <li><a href="">Maine </a></li>
+                                <li><a href="">Maryland </a></li>
+                                <li><a href="">Massachusetts </a></li>
+                                <li><a href="">Michigan </a></li>
+                                <li><a href="">Minnesota </a></li>
+                                <li><a href="">Mississippi </a></li>
+                                <li><a href="">Missouri </a></li>
+                                <li><a href="">Montana</a></li>
+                                <li><a href="">Nebraska </a></li>
+                                <li><a href="">Nevada </a></li>
+                                <li><a href="">New Hampshire </a></li>
+                                <li><a href="">New Jersey </a></li>
+                                <li><a href="">New Mexico </a></li>
+                                <li><a href="">New York </a></li>
+                                <li><a href="">North Carolina </a></li>
+                                <li><a href="">North Dakota </a></li>
 
-        <div class="main-content">
-
-            <div class="state_container">
-                <ol>
-                    <div class="row">
-                        <div class="col">
-                            <li><a href="">Alabama </a></li>
-                            <li><a href="">Alaska </a></li>
-                            <li><a href="">Arizona </a></li>
-                            <li><a href="">Arkansas </a></li>
-                            <li><a href="">California </a></li>
-                            <li><a href="">Colorado </a></li>
-                            <li><a href="">Connecticut </a></li>
-                            <li><a href="">Delaware </a></li>
-                            <li><a href="">Florida </a></li>
-                            <li><a href="">Georgia </a></li>
-                            <li><a href="">Hawaii </a></li>
-                            <li><a href="">Idaho </a></li>
-                            <li><a href="">Illinois</a></li>
-                            <li><a href="">Indiana </a></li>
-                            <li><a href="">Iowa </a></li>
-                            <li><a href="">Kansas </a></li>
-                            <li><a href="">Kentucky </a></li>
+                            </div>
+                            <div class="col">
+                                <li><a href="">Ohio </a></li>
+                                <li><a href="">Oklahoma </a></li>
+                                <li><a href="">Oregon </a></li>
+                                <li><a href="">Pennsylvania</a></li>
+                                <li><a href="">Rhode Island </a></li>
+                                <li><a href="">South Carolina </a></li>
+                                <li><a href="">South Dakota </a></li>
+                                <li><a href="">Tennessee </a></li>
+                                <li><a href="">Texas </a></li>
+                                <li><a href="">Utah </a></li>
+                                <li><a href="">Vermont </a></li>
+                                <li><a href="">Virginia </a></li>
+                                <li><a href="">Washington </a></li>
+                                <li><a href="">West Virginia </a></li>
+                                <li><a href="">Wisconsin </a></li>
+                                <li><a href="">Wyoming</a></li>
+                            </div>
                         </div>
-                        <!-- stops here -->
-                        <div class="col">
-                            <li><a href="">Louisiana </a></li>
-                            <li><a href="">Maine </a></li>
-                            <li><a href="">Maryland </a></li>
-                            <li><a href="">Massachusetts </a></li>
-                            <li><a href="">Michigan </a></li>
-                            <li><a href="">Minnesota </a></li>
-                            <li><a href="">Mississippi </a></li>
-                            <li><a href="">Missouri </a></li>
-                            <li><a href="">Montana</a></li>
-                            <li><a href="">Nebraska </a></li>
-                            <li><a href="">Nevada </a></li>
-                            <li><a href="">New Hampshire </a></li>
-                            <li><a href="">New Jersey </a></li>
-                            <li><a href="">New Mexico </a></li>
-                            <li><a href="">New York </a></li>
-                            <li><a href="">North Carolina </a></li>
-                            <li><a href="">North Dakota </a></li>
-
-                        </div>
-                        <div class="col">
-                            <li><a href="">Ohio </a></li>
-                            <li><a href="">Oklahoma </a></li>
-                            <li><a href="">Oregon </a></li>
-                            <li><a href="">Pennsylvania</a></li>
-                            <li><a href="">Rhode Island </a></li>
-                            <li><a href="">South Carolina </a></li>
-                            <li><a href="">South Dakota </a></li>
-                            <li><a href="">Tennessee </a></li>
-                            <li><a href="">Texas </a></li>
-                            <li><a href="">Utah </a></li>
-                            <li><a href="">Vermont </a></li>
-                            <li><a href="">Virginia </a></li>
-                            <li><a href="">Washington </a></li>
-                            <li><a href="">West Virginia </a></li>
-                            <li><a href="">Wisconsin </a></li>
-                            <li><a href="">Wyoming</a></li>
-                        </div>
-                    </div>
-                </ol>
-            </div>
-            <div class="state-info">
-                <h2> General Stat/s:</h2>
+                    </ol>
+                </div>
+                <div class="state-info">
+                    <h2> General Stat/s:</h2>
+                </div>
             </div>
         </div>
-    </div>
-
         <div class="jobs" id="sidebar">
             <h3>Jobs</h3>
         </div>

@@ -84,4 +84,15 @@ h5,
 }
 .job_date {
 	margin-top: -17px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}
+.email_login input,
+.reg_form input{
+    display: block;
+}
+.email_login input{
+    margin-top: 6px;
 }
