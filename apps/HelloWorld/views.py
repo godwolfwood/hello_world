@@ -26,7 +26,7 @@ def add(request):
     if request.POST["pass_form"]!=request.POST["conf_form"]:
         messages.add_message(request,messages.INFO,'password does not match')
         count=1
-    if len(request.POST["conf_form"])<9:
+    if len(request.POST["conf_form"])<8:
         messages.add_message(request,messages.INFO,'password needs to be at least 8 characters long')
         count=1
 
