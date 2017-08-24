@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="navbar navbar-default menubar">
-            <li class="navbar-text"><a href="/">Home</a></li>
+            <li class="navbar-text"><a href="{% url 'index' %}">Home</a></li>
             <li><a href="/">Employers</a></li>
             <li><a href="#">Look For Work</a></li>
             <li><a href="/login">Login</a></li>
@@ -25,6 +25,40 @@
         </ul>
     </nav>
 
+    <section class="navbar navbar-default filter-section">
+         <!-- <form action="/search" method="post" id="search-jobs">
+            {% csrf_token %}
+            <ul class="navbar navbar-default menubar">
+            
+            <li><input type="text" name="search" placeholder="Search"></li>
+            <li><input type="text" name="city-name" placeholder="City"></li>
+            
+            <li><input type="submit" value="Submit" name="submit"></li>
+        </ul>
+        </form>  -->
+        <form action="/search" method="POST" id="search-jobs">
+            {% csrf_token %}
+            <input type="text" placeholder="Search" name="search_form">
+            <input type="text" placeholder="City" name="city_form">
+            <input type="submit" value="Submit">
+        </form> 
+        
+    </section>
+    <!-- Test -->
+
+    <!-- <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div> -->
+
+    <!-- Test ends -->
         <div class="main-content">
 
             <div class="state_container">

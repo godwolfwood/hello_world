@@ -31,6 +31,21 @@ $(document).ready(function(){
             }
         }, "json");
         }
-    })    
+    }) 
+    
+    // $('#search-jobs').submit(function(e) {
+    //     e.preventDefault();
+    //     console.log("Form submitted");
+
+    //     // $.ajax({
+    //     //     url: "/search",
+    //     //     method: 'post',
+    //     //     data: $(this).serialize(),
+    //     //     success: function(serverResponse){
+    //     //         console.log('success', serverResponse)
+    //     //         $('#added_posts').append(serverResponse)
+    //     //     }
+    //     // })
+    // });
 })
 

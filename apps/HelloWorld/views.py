@@ -10,3 +10,11 @@ def index( request ):
 
 def login(request):
     return render(request, "HelloWorld/login.html")
+
+def search(request):
+    print "--------------------jsgsga"
+    request.session['search_term'] = request.POST['search_form']
+    request.session['city_term'] = request.POST['city_form']
+    print request.session['search_term']
+    print request.session['city_term']
+    return redirect('/')
