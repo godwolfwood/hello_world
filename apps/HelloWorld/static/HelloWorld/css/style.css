@@ -12,7 +12,15 @@
     margin-bottom: 20px;
 }
 h1.banner-heading {
-    margin: 20px 0 20px 13px;
+    margin: 20px 711px 20px 13px;
+    display: inline-block;
+}
+
+.greeting {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+    vertical-align: -79%;
 }
 
 /*Navbar styles*/
