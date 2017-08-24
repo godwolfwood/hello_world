@@ -122,8 +122,7 @@ $(document).ready(function(){
     filter['skills']= $('#skills_filter').val();
     filter['cities']= $('#city_filter').val();
     filter['states']= $('#state_filter').val();
-<<<<<<< HEAD
-    getJobs(count, filter.searches, filter.cities, filter.states);
+    getJobs(count, filter.searches, filter.skills, filter.cities, filter.states);
     if(filter['states'] in abbr_state){
         $(".state_container").html("<iframe width='640px' height='480px' src='https://embed.datausa.io/profile/geo/" + abbr_state[filter['states']] + "/economy/income_geo?viz=True' frameborder='0' ></iframe>");
         var temp = filter['cities'] + ', ' + filter['states'];
@@ -132,10 +131,7 @@ $(document).ready(function(){
     else{
         $(".state_container").html("<iframe width='640px' height='480px' src='https://embed.datausa.io/profile/geo/united-states/economy/income_geo?viz=True' frameborder='0' ></iframe>");
     }
-=======
-    console.log(filter);
-    getJobs(count, filter.searches, filter.skills, filter.cities, filter.states);
->>>>>>> 491bbd6... Added Skills filter to the Search form
+    // console.log(filter);
     $('#sidebar').on('scroll', function() {
         if(Math.round($(this).scrollTop() + $(this).innerHeight(), 10) >= Math.round($(this)[0].scrollHeight, 10)) {
             count++;

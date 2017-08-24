@@ -38,6 +38,13 @@
             <input type="text" placeholder="State" name="state_form">
             <input type="submit" value="Submit">
         </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <input id="search_filter" type="hidden" value="{{request.session.search_result}}">
         <input id="skills_filter" type="hidden" value="{{request.session.skills_result}}">
         <input id="city_filter" type="hidden" value="{{request.session.city_result}}">
