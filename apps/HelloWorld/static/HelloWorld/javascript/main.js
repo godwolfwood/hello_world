@@ -20,7 +20,7 @@ function getJobs(count, x, w, y, z){
     filter['skills']= $('#skills_filter').val();
     filter['cities']= $('#city_filter').val();
     filter['states']= $('#state_filter').val();
-    console.log(filter);
+    // console.log(filter);
     getJobs(count, filter.searches, filter.skills, filter.cities, filter.states);
     $('#sidebar').on('scroll', function() {
         if(Math.round($(this).scrollTop() + $(this).innerHeight(), 10) >= Math.round($(this)[0].scrollHeight, 10)) {

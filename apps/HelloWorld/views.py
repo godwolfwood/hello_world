@@ -64,4 +64,10 @@ def search(request):
     request.session['city_result']=request.POST['city_form']
     request.session['state_result']=request.POST['state_form']
     print request.session['skills_result']
+    count=0
+    if len(request.POST['state_form']) == 0:
+        messages.add_message(request,messages.INFO,'Please enter the state')
+        count=1
+    if count==1:
+        return redirect('/')
     return redirect('/')
