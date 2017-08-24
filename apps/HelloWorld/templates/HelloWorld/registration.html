@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,35 +13,37 @@
 
 <body id="wrapper">
     <h1 class="banner-heading">HelloWorld</h1>
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="navbar navbar-default menubar">
             <li class="navbar-text"><a href="/">Home</a></li>
-            <li><a href="#">Employers</a></li>
+            <li><a href="/">Employers</a></li>
             <li><a href="#">Look For Work</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/registration">Registration</a></li>
         </ul>
     </nav>
-    <h2>Login</h2>
-    <form>
-        {% csrf_token %}
-        <button type="submit"><a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a></button>
-    </form>
-    <b> Or </b>
-    <form class="email_login" action="/log_in" method="POST">
-        {% csrf_token %}
-        <input type="text" placeholder="Email" name="email_form">
-        <input type="password" placeholder="Password" name="password_form">
-        <input type="submit" value="Sign-in  with Email">
-    </form>
+  	<h2>Registration</h2>
+  	<form class="reg_form" action="/add" method="POST">
+  	 	{% csrf_token %}
+  		<p>First Name</p>
+  		<input type='text' name="first_name_form">
+  		<p>Last Name</p>
+  		<input type='text' name="last_name_form">
+  		<p>E-mail</p>
+  		<input type='text' name="email_form">
+  		<p>Password</p>
+  		<input type='password' name="pass_form">
+  		<p>Confirm Password</p>
+  		<input type='password' name="conf_form">
+  		<input type="submit" value="Submit">
+  	</form>
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
           <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
-    {% endif %}
+{% endif %}
 </body>
 
 </html>
