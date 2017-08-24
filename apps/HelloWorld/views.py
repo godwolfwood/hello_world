@@ -49,7 +49,6 @@ def logout(request):
 
 def log_in(request):
 	user_db=Users.objects.all()
-	print user_db
 	for user in user_db:
 		if user.email==request.POST['email_form']:
 			if user.password==request.POST['password_form']:
@@ -58,3 +57,10 @@ def log_in(request):
 				return redirect('/')
 	messages.add_message(request,messages.INFO,'invalid login information')
 	return redirect('/login')
+
+def search(request):
+	request.session['search_result']=request.POST['search_form']
+	request.session['city_result']=request.POST['city_form']
+	request.session['state_result']=request.POST['state_form']
+	print request.session['city_result']
+	return redirect('/')
