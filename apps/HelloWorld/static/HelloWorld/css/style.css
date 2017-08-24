@@ -39,6 +39,7 @@ nav {
     background-color: #333333;
     text-align: center;
     padding: 10px;
+    width: 1125px;
 }
 .menubar li {
     display: inline-block;
@@ -47,6 +48,14 @@ nav {
 .menubar li a,
 div.state_container li a {
     color: white;
+}
+.search-color {
+    background-color: #dbdcdd;
+    margin-top: -16px;
+    margin-bottom: 40px;
+}
+.search-color input {
+    margin-right: 10px;
 }
 
 /*Main content styles*/

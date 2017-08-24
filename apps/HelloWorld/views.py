@@ -59,8 +59,9 @@ def log_in(request):
 	return redirect('/login')
 
 def search(request):
-	request.session['search_result']=request.POST['search_form']
-	request.session['city_result']=request.POST['city_form']
-	request.session['state_result']=request.POST['state_form']
-	print request.session['city_result']
-	return redirect('/')
+    request.session['search_result']=request.POST['search_form']
+    request.session['skills_result']=request.POST['skills_form']
+    request.session['city_result']=request.POST['city_form']
+    request.session['state_result']=request.POST['state_form']
+    #print request.session['skills_result']
+    return redirect('/')
