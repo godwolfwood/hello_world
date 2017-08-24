@@ -13,17 +13,21 @@
 
 <body id="wrapper">
     <h1 class="banner-heading">HelloWorld</h1>
+    <div class="greeting">
     {% if request.session.id %}
-        <h3> Hi {{request.session.id}} !</h3>
+        <h3> Hi {{request.session.fname}} !</h3>
         <a href='/logout'><b>Logout</b></a>
     {% endif %}
+    </div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="navbar navbar-default menubar">
             <li class="navbar-text"><a href="/">Home</a></li>
-            <li><a href="/">Employers</a></li>
+            <li><a href="/">Employ</a></li>
             <li><a href="#">Look For Work</a></li>
+    {% if not request.session.id %}        
             <li><a href="/login">Login</a></li>
             <li><a href="/registration">Registration</a></li>
+    {% endif %}
         </ul>
     </nav>
 

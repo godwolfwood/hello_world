@@ -40,4 +40,21 @@ def add(request):
 	password=request.POST['conf_form']
 	)
 	request.session['id']=Users.objects.last().id
+	request.session['fname']=Users.objects.get(id=request.session['id']).first_name
 	return redirect("/")
+
+def logout(request):
+	del request.session['id']
+	return redirect('/')
+
+def log_in(request):
+	user_db=Users.objects.all()
+	print user_db
+	for user in user_db:
+		if user.email==request.POST['email_form']:
+			if user.password==request.POST['password_form']:
+				request.session['id']=Users.objects.get(email=request.POST['email_form']).id
+				request.session['fname']=Users.objects.get(id=request.session['id']).first_name
+				return redirect('/')
+	messages.add_message(request,messages.INFO,'invalid login information')
+	return redirect('/login')

@@ -28,12 +28,19 @@
         <input type="submit" value="Sign-in  with Google">
     </form>
     <b> Or </b>
-    <form class="email_login">
+    <form class="email_login" action="/log_in" method="POST">
         {% csrf_token %}
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Password">
+        <input type="text" placeholder="Email" name="email_form">
+        <input type="text" placeholder="Password" name="password_form">
         <input type="submit" value="Sign-in  with Email">
-    <form>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 
 </html>
