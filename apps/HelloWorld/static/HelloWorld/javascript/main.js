@@ -33,19 +33,19 @@ $(document).ready(function(){
         }
     }) 
     
-    // $('#search-jobs').submit(function(e) {
-    //     e.preventDefault();
-    //     console.log("Form submitted");
-
-    //     // $.ajax({
-    //     //     url: "/search",
-    //     //     method: 'post',
-    //     //     data: $(this).serialize(),
-    //     //     success: function(serverResponse){
-    //     //         console.log('success', serverResponse)
-    //     //         $('#added_posts').append(serverResponse)
-    //     //     }
-    //     // })
-    // });
+    $('#search-jobs').submit(function(e) {
+        e.preventDefault();
+        console.log("Form submitted");
+        console.log(request.session['search_term']);
+        $.ajax({
+            url: "/search",
+            method: 'post',
+            data: $(this).serialize(),
+            success: function(serverResponse){
+                console.log('success', serverResponse)
+                // $('#added_posts').append(serverResponse)
+            }
+        })
+    });
 })
 

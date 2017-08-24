@@ -36,7 +36,7 @@
             <li><input type="submit" value="Submit" name="submit"></li>
         </ul>
         </form>  -->
-        <form action="/search" method="POST" id="search-jobs">
+        <form action="/search" method="POST" class="navbar navbar-default menubar" id="search-jobs">
             {% csrf_token %}
             <input type="text" placeholder="Search" name="search_form">
             <input type="text" placeholder="City" name="city_form">
