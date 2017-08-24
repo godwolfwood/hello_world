@@ -16,19 +16,19 @@ def registration(request):
 	return render(request, "HelloWorld/registration.html")
 
 def add(request):
-	count=0
-	if len(request.POST['first_name_form'])<2:
-		messages.add_message(request,messages.INFO,'First Name field is too short')
-		count=1
-	if len(request.POST['last_name_form'])<2:
-		messages.add_message(request,messages.INFO,'Last Name field is too short')
-		count=1
-	if request.POST["pass_form"]!=request.POST["conf_form"]:
-		messages.add_message(request,messages.INFO,'password does not match')
-		count=1
-	if len(request.POST["conf_form"])<9:
-		messages.add_message(request,messages.INFO,'password needs to be at least 8 characters long')
-		count=1
+    count=0
+    if len(request.POST['first_name_form'])<2:
+        messages.add_message(request,messages.INFO,'First Name field is too short')
+        count=1
+    if len(request.POST['last_name_form'])<2:
+        messages.add_message(request,messages.INFO,'Last Name field is too short')
+        count=1
+    if request.POST["pass_form"]!=request.POST["conf_form"]:
+        messages.add_message(request,messages.INFO,'password does not match')
+        count=1
+    if len(request.POST["conf_form"])<8:
+        messages.add_message(request,messages.INFO,'password needs to be at least 8 characters long')
+        count=1
 
 	if count==1:
 		return redirect('/registration')	
