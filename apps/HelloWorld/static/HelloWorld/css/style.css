@@ -49,17 +49,41 @@ nav {
 div.state_container li a {
     color: white;
 }
-.search-color {
+.search-bar {
     background-color: #dbdcdd;
     margin-top: -16px;
     margin-bottom: 40px;
 }
-.search-color input {
+/* .search-bar input {
     margin-right: 10px;
+} */
+.search-bar input[type=text] {
+    height: 36px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+}
+.search-bar input[type=submit] {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1); 
+    /* background-color: #4d90fe; */
+    padding: 10px 8px;
+    font-size: 15px;
 }
 /* .facebook-login {
     background-image: url("../../static/HelloWorld/images/facebook.png");
-} */
+}  */
 /* Main content styles */
 
 .main-content {
@@ -156,7 +180,6 @@ h5,
   display: block;
   margin-bottom: 10px;
   position: relative;
-
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
