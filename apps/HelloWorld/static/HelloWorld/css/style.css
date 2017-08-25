@@ -131,13 +131,16 @@ ol {
     border: 0px solid #000000;
     overflow-y: scroll;
 }
-.jobs h4 {
+.jobs h4,
+.jobs_show h4 {
     font-size: 22px;
 }
-.jobs a {
+.jobs a,
+.jobs_show a{
     color: #006699;
 }
-.jobs h3 {
+.jobs h3,
+.jobs_show h3 {
      font-size: 32px; 
 }
 h5,
@@ -146,10 +149,81 @@ h5,
 }
 .job_date {
     margin-top: -17px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+.job_date {
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+    display: inline-block;
+    margin-right:226px;
+    vertical-align: 100%
+}
+.save_job {
+    vertical-align: -14%;
+    display: inline-block;
+    vertical-align: 100%;
+}
+
+/* Login styles */
+.login-form {
+    margin: 0 auto;
+    /* from template */
+    padding: 30px;
+    max-width: 400px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-top: 20px;
+}
+.social-login, .login-form p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.login-form p {
+    font-weight: 600;
+}
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.login-form input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.login-form input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  /* background-color: #4d90fe; */
+  padding: 15px 0px;
+  font-family: roboto;
+  font-size: 18px;
+}
+.login-form input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
 /* Login styles */
@@ -216,4 +290,21 @@ h5,
 }
 .email_login input{
     margin-top: 6px;
+}
+.job2 {
+    margin-left: 219px;
+}
+.jobs_show {
+    padding: 10px;
+    color: white;
+    background-color: #3399CC;
+    display: inline-block;
+    width: 95%;
+    height: 775px;
+    vertical-align: top;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    overflow-y: scroll;
 }

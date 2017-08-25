@@ -48,6 +48,7 @@ def logout(request):
     return redirect('/')
 
 def log_in(request):
+<<<<<<< HEAD
     user_db=Users.objects.all()
     for user in user_db:
         if user.email==request.POST['email_form']:
@@ -57,6 +58,16 @@ def log_in(request):
                 return redirect('/')
     messages.add_message(request,messages.INFO,'invalid login information')
     return redirect('/login')
+=======
+    user =Users.objects.filter(email=request.POST['email_form'])
+    if len(user) and user[0].password==request.POST['password_form'] :
+        request.session['id'] = user[0].id
+        request.session['fname'] = user[0].first_name
+        return redirect('/')
+    else:
+        return redirect('/login')
+	return redirect('/login')
+>>>>>>> 4d11565823b33283532f8d96d862ff4218e5e883
 
 def search(request):
     request.session['search_result']=request.POST['search_form']
@@ -71,3 +82,18 @@ def search(request):
     if count==1:
         return redirect('/')
     return redirect('/')
+
+def save(request):
+    if 'id' in request.session:
+        Jobs.objects.create(url = request.POST['url'],list_date = request.POST['date'], company = request.POST['company'], location = request.POST['save_location'], title = request.POST['title'],user = Users.objects.get(id=request.session['id']))
+    return redirect('/')
+
+def show(request):
+    context = {
+        "list_jobs": Users.objects.get(id=request.session['id']).jobs.all()
+    }
+    return render(request, "HelloWorld/show.html",context)
+def remove(request):
+    print request.POST['remove_job']
+    Jobs.objects.get(id=request.POST['remove_job']).delete()
+    return redirect("/show")

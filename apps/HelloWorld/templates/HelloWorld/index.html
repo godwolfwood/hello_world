@@ -22,14 +22,19 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <ul class="navbar navbar-default menubar">
                 <li class="navbar-text"><a href="/">Home</a></li>
-                <li><a href="#">Saved Jobs</a></li>
-                {% if not request.session.id %}        
+                <li></li>
+                {% if request.session.id %}
+                    <li></li>
+                    <li></li>
+                    <li><a href="/show">Saved Jobs</a></li>
+                {% else %}
+                    <li></li>        
                     <li><a href="/login">Login</a></li>
                     <li><a href="/registration">Registration</a></li>
                 {% endif %}
             </ul>
         </nav>
-         <form action="/search" class="navbar navbar-default menubar search-bar" method="POST"> 
+        <form action="/search" class="navbar navbar-default menubar search-bar" method="POST"> 
             {% csrf_token %}
             <input type="text" placeholder="Job title or keywords" name="search_form">
             <input type="text" placeholder="Skills" name="skills_form">
