@@ -52,14 +52,9 @@ var abbr_state = {
     "WI": "wisconsin",
     "WY": "wyoming"
 };
-<<<<<<< HEAD
-function getJobs(count, x, y, z){
-    var url = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"&text="+x+"&city="+y+",+"+z;
-=======
 function getJobs(count, x, w, y, z){
     // console.log(x, w, y, z);
     var url = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"&text="+x+"&skill="+w+"&city="+y+","+z;
->>>>>>> 65d5cf28567df0eb1e14ed0cbf08c02eec52756d
     $.get(url, function(res) {
         if(res.count < 1){
             $('#sidebar').append("<h3>No available jobs</h3>");
