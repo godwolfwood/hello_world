@@ -131,13 +131,16 @@ ol {
     border: 0px solid #000000;
     overflow-y: scroll;
 }
-.jobs h4 {
+.jobs h4,
+.jobs_show h4 {
     font-size: 22px;
 }
-.jobs a {
+.jobs a,
+.jobs_show a{
     color: #006699;
 }
-.jobs h3 {
+.jobs h3,
+.jobs_show h3 {
      font-size: 32px; 
 }
 h5,
@@ -227,4 +230,18 @@ h5,
 }
 .job2 {
     margin-left: 219px;
+}
+.jobs_show {
+    padding: 10px;
+    color: white;
+    background-color: #3399CC;
+    display: inline-block;
+    width: 95%;
+    height: 775px;
+    vertical-align: top;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    overflow-y: scroll;
 }
