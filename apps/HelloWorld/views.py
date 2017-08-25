@@ -10,10 +10,10 @@ def index( request ):
     return render(request, "HelloWorld/index.html")
 
 def login(request):
-	return render(request, "HelloWorld/login.html")
+    return render(request, "HelloWorld/login.html")
 
 def registration(request):
-	return render(request, "HelloWorld/registration.html")
+    return render(request, "HelloWorld/registration.html")
 
 def add(request):
     count=0
@@ -30,32 +30,29 @@ def add(request):
         messages.add_message(request,messages.INFO,'password needs to be at least 8 characters long')
         count=1
 
-	if count==1:
-		return redirect('/registration')	
+    if count==1:
+        return redirect('/registration')    
 
-	Users.objects.create(
-	first_name=request.POST['first_name_form'],
-	last_name=request.POST['last_name_form'],
-	email=request.POST['email_form'],
-	password=request.POST['conf_form']
-	)
-	request.session['id']=Users.objects.last().id
-	request.session['fname']=Users.objects.get(id=request.session['id']).first_name
-	return redirect("/")
+    Users.objects.create(
+    first_name=request.POST['first_name_form'],
+    last_name=request.POST['last_name_form'],
+    email=request.POST['email_form'],
+    password=request.POST['conf_form']
+    )
+    request.session['id']=Users.objects.last().id
+    request.session['fname']=Users.objects.get(id=request.session['id']).first_name
+    return redirect("/")
 
 def logout(request):
-	del request.session['id']
-	return redirect('/')
+    del request.session['id']
+    return redirect('/')
 
 def log_in(request):
-	user_db=Users.objects.all()
-	for user in user_db:
-		if user.email==request.POST['email_form']:
-			if user.password==request.POST['password_form']:
-				request.session['id']=Users.objects.get(email=request.POST['email_form']).id
-				request.session['fname']=Users.objects.get(id=request.session['id']).first_name
-				return redirect('/')
-	messages.add_message(request,messages.INFO,'invalid login information')
+    user =Users.objects.filter(email=request.POST['email_form'])
+    if len(user) and user[0].password==request.POST['password_form'] :
+        request.session['id'] = user[0].id
+        request.session['fname'] = user[0].first_name
+        return redirect('/')
 	return redirect('/login')
 
 def search(request):
