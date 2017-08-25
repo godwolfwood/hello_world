@@ -12,7 +12,7 @@
         <script src="{% static 'HelloWorld/javascript/main.js' %}"></script>
     </head>
     <body id="wrapper">
-        <h1 class="banner-heading">HelloWorld</h1>
+        <h1 class="banner-heading">Hello<span>World</span></h1>
         <div class="greeting">
         {% if request.session.id %}
             <h3> Hi {{request.session.fname}} !</h3>

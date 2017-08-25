@@ -18,6 +18,12 @@
 h1.banner-heading {
     margin: 20px 711px 20px 13px;
     display: inline-block;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 42px;
+}
+h1.banner-heading span {
+    color: #3399CC;
 }
 
 .greeting {
@@ -114,7 +120,7 @@ ol {
 .jobs {
     padding: 10px;
     color: white;
-    background-color: #006699;
+    background-color: #3399CC;
     display: inline-block;
     width: 37.5%;
     height: 775px;
@@ -125,16 +131,33 @@ ol {
     border: 0px solid #000000;
     overflow-y: scroll;
 }
+.jobs h4 {
+    font-size: 22px;
+}
+.jobs a {
+    color: #006699;
+}
+.jobs h3 {
+     font-size: 32px; 
+}
 h5,
 .job_location {
 	display: inline-block;
+    margin-bottom: 0px;
 }
 .job_date {
-	margin-top: -17px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+    display: inline-block;
+    margin-right:226px;
+    vertical-align: 100%
+}
+.save_job {
+    vertical-align: -14%;
+    display: inline-block;
+    vertical-align: 100%;
 }
 
 /* Login styles */
