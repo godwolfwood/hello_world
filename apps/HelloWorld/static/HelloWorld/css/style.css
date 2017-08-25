@@ -3,13 +3,17 @@
     padding: 0;
 }
 
-/*Body styles*/
+/* Body styles */
 
 #wrapper {
     width: 1200px;
     margin: 0px auto;
     box-sizing: border-box;
     margin-bottom: 20px;
+    /* background-color: black; */
+    /* z-index: -1;
+    opacity: 0.9; */
+    /* background: url("../../HelloWorld/images/transparent.jpg"); */
 }
 h1.banner-heading {
     margin: 20px 711px 20px 13px;
@@ -23,7 +27,7 @@ h1.banner-heading {
     vertical-align: -79%;
 }
 
-/*Navbar styles*/
+/* Navbar styles */
 
 nav {
     width: 100%;
@@ -35,6 +39,7 @@ nav {
     background-color: #333333;
     text-align: center;
     padding: 10px;
+    width: 1125px;
 }
 .menubar li {
     display: inline-block;
@@ -44,8 +49,42 @@ nav {
 div.state_container li a {
     color: white;
 }
-
-/*Main content styles*/
+.search-bar {
+    background-color: #dbdcdd;
+    margin-top: -16px;
+    margin-bottom: 40px;
+}
+/* .search-bar input {
+    margin-right: 10px;
+} */
+.search-bar input[type=text] {
+    height: 36px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+}
+.search-bar input[type=submit] {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1); 
+    /* background-color: #4d90fe; */
+    padding: 10px 8px;
+    font-size: 15px;
+}
+/* .facebook-login {
+    background-image: url("../../static/HelloWorld/images/facebook.png");
+}  */
+/* Main content styles */
 
 .main-content {
     display: inline-block;
@@ -78,7 +117,7 @@ ol {
     background-color: #006699;
     display: inline-block;
     width: 37.5%;
-    height: 713px;
+    height: 775px;
     vertical-align: top;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -96,6 +135,65 @@ h5,
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+}
+
+/* Login styles */
+.login-form {
+    margin: 0 auto;
+    /* from template */
+    padding: 30px;
+    max-width: 400px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-top: 20px;
+}
+.social-login, .login-form p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.login-form p {
+    font-weight: 600;
+}
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.login-form input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.login-form input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  /* background-color: #4d90fe; */
+  padding: 15px 0px;
+  font-family: roboto;
+  font-size: 18px;
+}
+.login-form input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 .email_login input,
 .reg_form input{

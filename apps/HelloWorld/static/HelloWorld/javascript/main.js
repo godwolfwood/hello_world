@@ -52,8 +52,14 @@ var abbr_state = {
     "WI": "wisconsin",
     "WY": "wyoming"
 };
+<<<<<<< HEAD
 function getJobs(count, x, y, z){
     var url = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"&text="+x+"&city="+y+",+"+z;
+=======
+function getJobs(count, x, w, y, z){
+    // console.log(x, w, y, z);
+    var url = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"&text="+x+"&skill="+w+"&city="+y+","+z;
+>>>>>>> 65d5cf28567df0eb1e14ed0cbf08c02eec52756d
     $.get(url, function(res) {
         if(res.count < 1){
             $('#sidebar').append("<h3>No available jobs</h3>");
@@ -118,9 +124,10 @@ $(document).ready(function(){
     var count = 1;
     var filter = {};
     filter['searches']= $('#search_filter').val();
+    filter['skills']= $('#skills_filter').val();
     filter['cities']= $('#city_filter').val();
     filter['states']= $('#state_filter').val();
-    getJobs(count, filter.searches, filter.cities, filter.states);
+    getJobs(count, filter.searches, filter.skills, filter.cities, filter.states);
     if(filter['states'] in abbr_state){
         $(".state_container").html("<iframe width='640px' height='480px' src='https://embed.datausa.io/profile/geo/" + abbr_state[filter['states']] + "/economy/income_geo?viz=True' frameborder='0' ></iframe>");
         var temp = filter['cities'] + ', ' + filter['states'];
@@ -129,10 +136,11 @@ $(document).ready(function(){
     else{
         $(".state_container").html("<iframe width='640px' height='480px' src='https://embed.datausa.io/profile/geo/united-states/economy/income_geo?viz=True' frameborder='0' ></iframe>");
     }
+    // console.log(filter);
     $('#sidebar').on('scroll', function() {
         if(Math.round($(this).scrollTop() + $(this).innerHeight(), 10) >= Math.round($(this)[0].scrollHeight, 10)) {
             count++;
-            getJobs(count, filter.searches, filter.cities, filter.states);
+            getJobs(count, filter.searches, filter.skills, filter.cities, filter.states);
         }
     });
 })
