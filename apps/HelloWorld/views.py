@@ -53,6 +53,8 @@ def log_in(request):
         request.session['id'] = user[0].id
         request.session['fname'] = user[0].first_name
         return redirect('/')
+    else:
+        return redirect('/login')
 	return redirect('/login')
 
 def search(request):
@@ -72,8 +74,6 @@ def search(request):
 def save(request):
     if 'id' in request.session:
         Jobs.objects.create(url = request.POST['url'],list_date = request.POST['date'], company = request.POST['company'], location = request.POST['save_location'], title = request.POST['title'],user = Users.objects.get(id=request.session['id']))
-    else:
-        messages.add_message(request,messages.INFO,'Log in to add jobs')
     return redirect('/')
 
 def show(request):
