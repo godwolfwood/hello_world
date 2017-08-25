@@ -82,5 +82,6 @@ def show(request):
     }
     return render(request, "HelloWorld/show.html",context)
 def remove(request):
-    
+    print request.POST['remove_job']
+    Jobs.objects.get(id=request.POST['remove_job']).delete()
     return redirect("/show")
