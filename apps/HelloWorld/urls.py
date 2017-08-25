@@ -10,4 +10,6 @@ urlpatterns = [
     url( r'^log_in$' , views.log_in , name="login" ),
     url( r'^search$' , views.search , name="search" ),
     url( r'^save$' , views.save , name="save" ),
+    url( r'^show$' , views.show , name="show" ),
+    url( r'^remove$' , views.remove , name="remove" ),
 ]

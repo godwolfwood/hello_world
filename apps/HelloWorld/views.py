@@ -70,10 +70,17 @@ def search(request):
     return redirect('/')
 
 def save(request):
-    print request.POST
-    print request.POST['url']
-    print request.POST['date']
-    print request.POST['company']
-    print request.POST['save_location']
-    print request.POST['title']
+    if 'id' in request.session:
+        Jobs.objects.create(url = request.POST['url'],list_date = request.POST['date'], company = request.POST['company'], location = request.POST['save_location'], title = request.POST['title'],user = Users.objects.get(id=request.session['id']))
+    else:
+        messages.add_message(request,messages.INFO,'Log in to add jobs')
     return redirect('/')
+
+def show(request):
+    context = {
+        "list_jobs": Users.objects.get(id=request.session['id']).jobs.all()
+    }
+    return render(request, "HelloWorld/show.html",context)
+def remove(request):
+    
+    return redirect("/show")
