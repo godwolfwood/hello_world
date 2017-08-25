@@ -29,7 +29,7 @@
                 {% endif %}
             </ul>
         </nav>
-        <form action="/search" class="navbar navbar-default menubar search-color" method="POST">
+         <form action="/search" class="navbar navbar-default menubar search-bar" method="POST"> 
             {% csrf_token %}
             <input type="text" placeholder="Job title or keywords" name="search_form">
             <input type="text" placeholder="Skills" name="skills_form">
