@@ -23,24 +23,28 @@
             <li><a href="/registration">Registration</a></li>
         </ul>
     </nav>
-    <h2>Login</h2>
-    <form>
-        <input type="submit" value="Sign-in  with Google">
-    </form>
-    <b> Or </b>
-    <form class="email_login" action="/log_in" method="POST">
-        {% csrf_token %}
-        <input type="text" placeholder="Email" name="email_form">
-        <input type="password" placeholder="Password" name="password_form">
-        <input type="submit" value="Sign-in  with Email">
-    </form>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <section class="login-form">
+        <h3>Login to your account</h3>
+        <!-- <form>
+            {% csrf_token %} -->
+            <!-- <button class="facebook-login" type="submit"><a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a></button> -->
+            <div class="social-login"><a href="{% url 'social:begin' 'facebook' %}"><img src="../../static/HelloWorld/images/facebook.png" alt="" style="width:200px; height:40px;"></a></div>
+        <!-- </form> -->
+        <p> OR </p>
+        <form class="email_login" action="/log_in" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Email" name="email_form">
+            <input type="password" placeholder="Password" name="password_form">
+            <input type="submit" value="Sign-in  with Email">
+        </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>  
 </body>
 
 </html>
