@@ -52,9 +52,30 @@ var abbr_state = {
     "WI": "wisconsin",
     "WY": "wyoming"
 };
+
+$(document).on('submit', '.save_form', function(e){
+    e.preventDefault();
+    $.ajax({
+        url:  $(this).attr('action'),
+        data: {
+            csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
+            "url": $("input[name='save_url']").val(),
+            "title": $("input[name='save_title']").val(),
+            "save_location": $("input[name='save_location']").val(),
+            "company": $("input[name='save_company']").val(),
+            "date": $("input[name='save_date']").val()
+            }, 
+        method: 'post',
+        success: function(serverResponse){
+            //console.log('success', serverResponse)
+        }
+    })
+});
+
 function getJobs(count, x, w, y, z){
     // console.log(x, w, y, z);
     var url = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?page="+count+"&text="+x+"&skill="+w+"&city="+y+","+z;
+
     $.get(url, function(res) {
         if(res.count < 1){
             $('#sidebar').append("<h3>No available jobs</h3>");
@@ -64,9 +85,17 @@ function getJobs(count, x, w, y, z){
                 $('#sidebar').append(
                 "<a href='" + res.resultItemList[i].detailUrl + 
                 "' target='_blank'><h4>" + res.resultItemList[i].jobTitle + "</h4></a>"+
-                "<h5>" + res.resultItemList[i].company + "</h5>"+
-                "<p class = 'job_location'><i>" +"&nbsp"+res.resultItemList[i].location + "</i></p>" +
-                "<p class = 'job_date'>" + res.resultItemList[i].date + "</p>");
+                "<div><h5>" + res.resultItemList[i].company + "</h5>"+
+                "<p class = 'job_location'><i>" +"&nbsp"+res.resultItemList[i].location + "</i></p></div>" +
+                "<p class = 'job_date'>"  + res.resultItemList[i].date  + "</p>"+ 
+                "<form class= 'save_form' action='/save' method='POST'>"+
+                    "<input type='hidden' value='"+res.resultItemList[i].detailUrl+"' name='save_url'></input>"+
+                    "<input type='hidden' value='"+res.resultItemList[i].jobTitle+"' name='save_title'></input>"+
+                    "<input type='hidden' value='"+res.resultItemList[i].company+"' name='save_company'></input>"+
+                    "<input type='hidden' value='"+res.resultItemList[i].location+"' name='save_location'></input>"+
+                    "<input type='hidden' value='"+res.resultItemList[i].date+"' name='save_date'></input>"+
+                "<input type='submit' value='save'></input></form>"
+                );
             }
         }   
     }, "json");

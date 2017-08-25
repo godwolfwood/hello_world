@@ -71,3 +71,12 @@ def search(request):
     if count==1:
         return redirect('/')
     return redirect('/')
+
+def save(request):
+    print request.POST
+    print request.POST['url']
+    print request.POST['date']
+    print request.POST['company']
+    print request.POST['save_location']
+    print request.POST['title']
+    return redirect('/')

@@ -102,13 +102,21 @@ ol {
 h5,
 .job_location {
 	display: inline-block;
+    margin-bottom: 0px;
 }
 .job_date {
-	margin-top: -17px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+    display: inline-block;
+    margin-right:226px;
+    vertical-align: 100%
+}
+.save_job {
+    vertical-align: -14%;
+    display: inline-block;
+    vertical-align: 100%;
 }
 .email_login input,
 .reg_form input{
