@@ -13,8 +13,7 @@ class Users(models.Model):
 	updated_at = models.DateTimeField(auto_now = True)
 
 class Jobs(models.Model):
-	url = models.CharField(max_length=255) 
-	last_name = models.CharField(max_length=255)
+	url = models.CharField(max_length=255)
 	list_date= models.DateTimeField()
 	company = models.CharField(max_length=255)
 	location = models.CharField(max_length=255)
